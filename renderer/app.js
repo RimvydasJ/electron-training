@@ -11,6 +11,22 @@ let addItem = document.getElementById("add-item"),
 
 let search = document.getElementById('search');
 
+
+window.newItem = () => {
+    showModal.click();
+}
+
+window.openItem = items.open;
+window.deleteItem = () => {
+    let selectedItem = items.getSelectedItem();
+    items.delete(selectedItem.index);
+}
+window.native = items.openNative
+window.search = () => {
+    search.focus();
+}
+
+
 search.addEventListener('keyup', e=> {
     Array.from(document.getElementsByClassName('read-item')).forEach(
         item => {

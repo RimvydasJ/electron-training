@@ -1,11 +1,38 @@
 //Modules
 
-const { remote } = require('electron')
+const { remote,shell } = require('electron')
+
 
 const template = [
     {
         label: "Items",
-        submenu: []
+        submenu: [
+            {
+                label:'Add New',
+                click: window.newItem,
+                accelerator: 'CmdOrCtrl+O'
+            },
+            {
+                label:'Read Item',
+                accelerator:'CmdOrCtrl+Enter',
+                click: window.openItem
+            },
+            {
+                label:'Delete Item',
+                accelerator:'CmdOrCtrl+Backspace',
+                click: window.deleteItem
+            },
+            {
+                label:'Open in browser',
+                accelerator:'CmdOrCtrl+Shift+O',
+                click: window.native
+            },
+            {
+                label:'Search Items',
+                accelerator:'CmdOrCtrl+S',
+                click: window.search
+            }
+        ]
     },
     {
         role: 'editMenu'
@@ -19,7 +46,7 @@ const template = [
             {
                 label:'Learn more',
                 click: () =>{
-                    
+                    shell.openExternal("https://github.com/RimvydasJ/electron-training");
                 }
             }
         ]

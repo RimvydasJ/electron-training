@@ -1,4 +1,5 @@
 let items = document.getElementById("items");
+const { shell } = require('electron');
 let fs = require('fs')
 let readerJS
 
@@ -104,6 +105,14 @@ exports.itemAdd = (item, isNew=false) => {
         this.save();
     }
 
+}
+
+exports.openNative = () => {
+    if(!this.storage.length) return;
+
+    let selectedItem = this.getSelectedItem();
+
+    shell.openExternal(selectedItem.node.dataset.url);
 }
 
 this.storage.forEach(item => {
