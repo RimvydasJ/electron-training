@@ -1,0 +1,24 @@
+{
+  "name": "electron-training",
+  "version": "1.0.0",
+  "description": "Electron training",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "watch": "nodemon --exec electron .",
+    "reset": "git reset --hard"
+  },
+  "repository": "https://github.com/RimvydasJ/electron-training",
+  "keywords": [
+    "Electron"
+  ],
+  "author": "Rimvydas",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^9.0.0",
+    "nodemon": "^2.0.0"
+  },
+  "dependencies": {
+    "electron-window-state": "^5.0.3"
+  }
+}
